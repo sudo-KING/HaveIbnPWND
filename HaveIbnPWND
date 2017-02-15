@@ -1,0 +1,87 @@
+#/bin/bash
+
+#### Note: at the current, this script gives crude output. ####
+### Todo: Add > feature for parsing output with sed for a more user readable output. ###
+
+echo "Here we go...";
+echo ""
+echo -e "You are about to search '"https://haveibeenpwned.com"' for Pastebin releases and Breaches with this tool";
+sleep 1;
+echo ""
+  read -p "Please input the UID/Email Address your inquarying about for released and hit enter: " person
+sleep 1;
+echo ""
+echo "We're now entering the Matrix for the knowledge you seek, stand by... "
+
+sleep 1;
+echo -e '             ________________________________________________'
+echo -e '            /                                                \'
+echo -e '           |    _________________________________________     |'
+echo -e '           |   |                                         |    |'
+echo -e '           |   |  root@W-SEC-0wning:~# Have I been PWNED?|    |'
+echo -e '           |   |  Testing...                             |    |'
+echo -e '           |   |  Testing...                             |    |'
+echo -e '           |   |  Testing...                             |    |'
+echo -e '           |   |  Testing...                             |    |'
+echo -e '           |   |  Almost Done...                         |    |'
+echo -e '           |   |  <See Below for Results>                |    |'
+echo -e '           |   |                                         |    |'
+echo -e '           |   |                                         |    |'
+echo -e '           |   |                                         |    |'
+echo -e '           |   |                                         |    |'
+echo -e '           |   |  <3 .0. sudo_KING                       |    |'
+echo -e '           |   |_________________________________________|    |'
+echo -e '           |                                                  |'
+echo -e '            \_________________________________________________/'
+echo -e '                   \___________________________________/'
+echo -e '                ___________________________________________'
+echo -e ' ---._.-------------------------------------------------------------._.--- '
+sleep 4
+
+echo ""
+  curl --silent --request GET https://haveibeenpwned.com/api/v2/pasteaccount/$person
+echo ""
+echo "We're done here, if you see no output then you're in the clear.";
+
+echo ""
+  read -p "Did you want to check on specific Account Breaches? <Y/N>: " prompt
+echo ""
+if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
+then
+  read -p "Input the Email Address in question and hit enter: " text
+echo ""
+  curl --silent --request GET https://haveibeenpwned.com/api/breachedaccount/$text
+echo ""
+fi
+if [[ $prompt == "n" || $prompt == "no" || $prompt == "N" || $prompt == "NO" ]]
+then
+  exit
+fi
+
+echo ""
+read -p "Did you want to check on specific Site Breaches? <Y/N>: " prompt
+echo ""
+if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
+then
+  read -p "Input the Domain Address in question and hit enter: " text
+echo ""
+  curl --silent --request GET https://haveibeenpwned.com/api/v2/breach/$text
+echo ""
+fi
+if [[ $prompt == "n" || $prompt == "no" || $prompt == "N" || $prompt == "NO" ]]
+then
+  exit
+fi
+
+echo ""
+read -p "Did you want to check on '"ALL"' Site Breaches on file? <Y/N>: " prompt
+echo ""
+if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
+then
+  curl --silent --request GET https://haveibeenpwned.com/api/v2/breaches
+echo ""
+fi
+if [[ $prompt == "n" || $prompt == "no" || $prompt == "N" || $prompt == "NO" ]]
+then
+  exit
+fi

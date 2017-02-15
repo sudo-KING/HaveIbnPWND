@@ -8,7 +8,7 @@ echo ""
 echo -e "You are about to search '"https://haveibeenpwned.com"' for Pastebin releases and Breaches with this tool";
 sleep 1;
 echo ""
-  read -p "Please input the UID/Email Address your inquarying about for released and hit enter: " person
+  read -p "Please input the UID/Email Address your inquarying about for pastebin releases and hit enter: " person
 sleep 1;
 echo ""
 echo "We're now entering the Matrix for the knowledge you seek, stand by... "
@@ -48,7 +48,7 @@ echo ""
 echo ""
 if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
 then
-  read -p "Input the Email Address in question and hit enter: " text
+  read -p "Input the UID/Email Address in question and hit enter: " text
 echo ""
   curl --silent --request GET https://haveibeenpwned.com/api/breachedaccount/$text
 echo ""
@@ -74,7 +74,7 @@ then
 fi
 
 echo ""
-read -p "Did you want to check on '"ALL"' Site Breaches on file? <Y/N>: " prompt
+read -p "Did you want to check on '"ALL"' Site Breaches on file at HaveI? <Y/N>: " prompt
 echo ""
 if [[ $prompt == "y" || $prompt == "Y" || $prompt == "yes" || $prompt == "Yes" ]]
 then

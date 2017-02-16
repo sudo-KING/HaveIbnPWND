@@ -8,7 +8,7 @@ echo ""
 echo -e "You are about to search '"https://haveibeenpwned.com"' for Pastebin releases and Breaches with this tool";
 sleep 1;
 echo ""
-  read -p "Please input the UID/Email Address your inquarying about for pastebin releases and hit enter: " person
+  read -p "Please input the UID/Email Address you're inquarying about for pastebin releases and hit enter: " person
 sleep 1;
 echo ""
 echo "We're now entering the Matrix for the knowledge you seek, stand by... "
@@ -18,7 +18,7 @@ echo -e '             ________________________________________________'
 echo -e '            /                                                \'
 echo -e '           |    _________________________________________     |'
 echo -e '           |   |                                         |    |'
-echo -e '           |   |  root@W-SEC-0wning:~# Have I been PWNED?|    |'
+echo -e '           |   |  root@SEC-0wning:~# Have I been PWNED?  |    |'
 echo -e '           |   |  Testing...                             |    |'
 echo -e '           |   |  Testing...                             |    |'
 echo -e '           |   |  Testing...                             |    |'
